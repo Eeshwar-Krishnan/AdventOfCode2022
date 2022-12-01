@@ -15,7 +15,6 @@ pub fn problem2(mut file: File){
     let mut buf: String = "".to_string();
     file.read_to_string(&mut buf).unwrap();
     let mut tmp = 0;
-    let mut ind = 0;
     let mut maxes = vec![0];
     buf.split("\n").map(|val| {match(val.parse::<i32>()){Ok(v) => {tmp += v;} Err(v) => {maxes.push(tmp); tmp=0;}}}).for_each(drop);
     maxes.sort(); maxes.reverse();
